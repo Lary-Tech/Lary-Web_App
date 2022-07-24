@@ -1,0 +1,23 @@
+@import "./base.css";
+
+body {
+  font-size: 14px; 
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
+  'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+  line-height: 1.6; transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0s, background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  background-color: var(--el-bg-color-page);
+}
+
+a {
+  color: var(--el-text-color-primary);
+}
+
+#app {
+  height: 100vh;
+  width: 100vw;
+
+  padding: 0;
+  margin: 0;
+
+  font-weight: normal;
+}
