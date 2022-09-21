@@ -19,5 +19,10 @@ a {
   padding: 0;
   margin: 0;
 
-  font-weight: normal;
+  --el-font-size-base: 16px !important
+  ;--el-menu-item-font-size: var(--el-font-size-medium) !important;
+}
+
+*, *::before, *::after {
+  font-weight: bold;
 }

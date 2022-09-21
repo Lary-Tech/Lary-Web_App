@@ -30,11 +30,11 @@ const createUser = async (email, password) => {
     );
 
     const user = userCredential.user;
-    console.log("User signed up: ", user);
+    // console.log("User signed up: ", user);
     ElMessage.success("成功註冊");
     return user;
   } catch (error) {
-    console.log("Error: ", error);
+    // console.log("Error: ", error);
     ElMessage.error("註冊失敗");
     return null;
   }
@@ -49,11 +49,12 @@ const signUserIn = async (email, password) => {
     );
 
     const user = userCredential.user;
-    console.log("User signed in: ", user);
+    // console.log("User signed in: ", user);
     ElMessage.success("成功登入!");
     return user;
   } catch (error) {
-    ElMessage.error("Error: ", error);
+    console.log(error);
+    ElMessage.error("登入錯誤，請檢查帳號密碼是否正確或註冊！");
     return null;
   }
 };
@@ -64,7 +65,8 @@ const signUserOut = async () => {
     ElMessage.success("成功登出！");
     return true;
   } catch (error) {
-    ElMessage.error("Error: ", error);
+    console.log(error);
+    ElMessage.error("登出失敗，老駭寶了？");
     return false;
   }
 };
@@ -82,4 +84,29 @@ const getUserPromise = () => {
   });
 };
 
-export { auth, createUser, signUserIn, signUserOut, getUserPromise };
+const getIdTokenPromise = () => {
+  return new Promise((resolve) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      unsubscribe();
+      if (user) {
+        user.getIdToken().then((idToken) => {
+          resolve(idToken);
+        });
+      } else {
+        resolve(null);
+      }
+    });
+  }).catch((error) => {
+    console.log(error);
+    return null;
+  });
+};
+
+export {
+  auth,
+  createUser,
+  signUserIn,
+  signUserOut,
+  getUserPromise,
+  getIdTokenPromise,
+};

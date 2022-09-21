@@ -9,9 +9,11 @@
     "test:e2e": "start-server-and-test preview http://localhost:4173/ 'cypress open --e2e'",
     "test:e2e:ci": "start-server-and-test preview http://localhost:4173/ 'cypress run --e2e'",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
-    "deploy": "vite build; firebase deploy"
+    "deploy": "vite build; firebase deploy --only hosting"
   },
   "dependencies": {
+    "@babel/eslint-parser": "^7.18.9",
+    "axios": "^0.27.2",
     "element-plus": "^2.2.10",
     "firebase": "^9.9.1",
     "pinia": "^2.0.16",

@@ -6,9 +6,19 @@
     mode="horizontal"
     :ellipsis="false"
   >
-    <div class="logo-container"><a>Lary Tech</a></div>
+    <div class="logo-container">
+      <img src="@/assets/logo.svg" style="padding: 5px; width: 40px" />
+      <a
+        style="
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 18px;
+          font-weight: bold;
+        "
+        >賴瑞科技</a
+      >
+    </div>
     <div class="content">
-      <el-menu-item disabled index="/">主頁</el-menu-item>
+      <el-menu-item index="/">主頁</el-menu-item>
       <el-menu-item disabled index="/about">關於</el-menu-item>
       <el-menu-item disabled index="/products">產品</el-menu-item>
       <el-menu-item v-if="!user" index="/sign-in">登入</el-menu-item>
@@ -45,6 +55,8 @@ const toggleDark = useToggle(isDark);
 
 <style>
 .header-container {
+  border-radius: 20px;
+  width: 100%;
   position: relative;
   display: flex;
   justify-content: space-between;

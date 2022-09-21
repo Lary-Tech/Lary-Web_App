@@ -1,8 +1,8 @@
 <template>
   <el-container>
-    <el-header style="width: 100vw; padding: 0">
+    <HeaderLayout>
       <NavMenu />
-    </el-header>
+    </HeaderLayout>
     <el-main style="width: 100vw; padding: 0">
       <router-view />
     </el-main>
@@ -13,7 +13,8 @@
 </template>
 
 <script setup>
-import NavMenu from "./components/NavMenu.vue";
+import HeaderLayout from "@/layouts/HeaderLayout.vue";
+import NavMenu from "@/components/NavMenu.vue";
 </script>
 
 <style scoped></style>
