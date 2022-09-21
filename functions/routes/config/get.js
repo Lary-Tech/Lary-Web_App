@@ -7,7 +7,12 @@ const defaultConfig = {
         stopDead: false,
     },
     attackResponse: "回村",
-    hpLowBound: {
+    magicScrollPress: "6",
+    hpLowBound1: {
+        value: 10,
+        press: "7",
+    },
+    hpLowBound2: {
         value: 10,
         press: "7",
     },
