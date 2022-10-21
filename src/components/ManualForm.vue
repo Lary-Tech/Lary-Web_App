@@ -10,75 +10,47 @@
       <el-checkbox v-model="form.basic.stopDead">死亡自動停練</el-checkbox>
     </el-form-item> -->
     <el-form-item label="手動模式"></el-form-item>
-    <el-form-item label="(1)HP值低於">
-      <el-row>
-        <el-col :span="9">
-          <el-input-number
-            v-model="form.hpLowBound1.value"
-            :min="10"
-            :max="70"
-          ></el-input-number>
-          <span>&nbsp;%</span>
-          <el-radio-group v-model="form.hpLowBound1.press">
-            <el-radio label="">無</el-radio>
-            <el-radio label="7">按7</el-radio>
-          </el-radio-group>
-        </el-col>
-        <el-col :span="6" style="text-align: right">
-          <span
-            style="
-              padding-right: 1vw;
-              font-size: var(--el-form-label-font-size);
-              color: var(--el-text-color-regular);
-            "
-            >MP值低於</span
-          >
-        </el-col>
-        <el-col :span="9">
-          <el-input-number
-            v-model="form.mpLowBound.value"
-            :min="10"
-            :max="70"
-          ></el-input-number>
-          <span>&nbsp;%</span>
-          <el-radio-group v-model="form.mpLowBound.press">
-            <el-radio label="">無</el-radio>
-            <el-radio label="5">按5</el-radio>
-          </el-radio-group>
-        </el-col>
-      </el-row>
+    <el-form-item label="(1) HP值低於">
+      <el-input-number
+        v-model="form.hpLowBound1.value"
+        :min="10"
+        :max="70"
+      ></el-input-number>
+      <span>&nbsp;%</span>
+      <el-radio-group v-model="form.hpLowBound1.press">
+        <el-radio label="">無</el-radio>
+        <el-radio label="7">按7</el-radio>
+      </el-radio-group>
     </el-form-item>
-    <el-form-item label="(2)HP值低於">
-      <el-row>
-        <el-col :span="9">
-          <el-input-number
-            v-model="form.hpLowBound2.value"
-            :min="10"
-            :max="70"
-          ></el-input-number>
-          <span>&nbsp;%</span>
-          <el-radio-group v-model="form.hpLowBound2.press">
-            <el-radio label="">無</el-radio>
-            <el-radio label="8">按8</el-radio>
-          </el-radio-group>
-        </el-col>
-        <el-col :span="6" style="text-align: right">
-          <span
-            style="
-              padding-right: 1vw;
-              font-size: var(--el-form-label-font-size);
-              color: var(--el-text-color-regular);
-            "
-            >魔法捲軸</span
-          >
-        </el-col>
-        <el-col :span="9">
-          <el-radio-group v-model="form.magicScrollPress">
-            <el-radio label="">無</el-radio>
-            <el-radio label="2">按2</el-radio>
-          </el-radio-group>
-        </el-col>
-      </el-row>
+    <el-form-item label="(2) HP值低於">
+      <el-input-number
+        v-model="form.hpLowBound2.value"
+        :min="10"
+        :max="70"
+      ></el-input-number>
+      <span>&nbsp;%</span>
+      <el-radio-group v-model="form.hpLowBound2.press">
+        <el-radio label="">無</el-radio>
+        <el-radio label="8">按8</el-radio>
+      </el-radio-group>
+    </el-form-item>
+    <el-form-item label="(3) MP值低於">
+      <el-input-number
+        v-model="form.mpLowBound.value"
+        :min="10"
+        :max="70"
+      ></el-input-number>
+      <span>&nbsp;%</span>
+      <el-radio-group v-model="form.mpLowBound.press">
+        <el-radio label="">無</el-radio>
+        <el-radio label="5">按5</el-radio>
+      </el-radio-group>
+    </el-form-item>
+    <el-form-item label="(4) 維持魔法卷軸效果">
+      <el-radio-group v-model="form.magicScrollPress">
+        <el-radio label="">無</el-radio>
+        <el-radio label="2">按2</el-radio>
+      </el-radio-group>
     </el-form-item>
     <!-- <el-form-item label="藥水量低於">
       <el-row>
@@ -186,3 +158,8 @@ onBeforeMount(() => {
   fetchConfig();
 });
 </script>
+<style scoped>
+.el-radio-group {
+  margin-left: 2vw;
+}
+</style>
