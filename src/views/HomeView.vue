@@ -1,5 +1,5 @@
 <template>
-  <el-carousel :interval="3000" type="card" height="505px">
+  <el-carousel :interval="3000" type="card">
     <el-carousel-item>
       <el-image
         src="https://cf.shopee.tw/file/a3f44bacbc1aab28428152c788591e18"
@@ -28,6 +28,14 @@
 </template>
 
 <style scoped>
+.el-carousel {
+  height: 50vh;
+}
+@media screen and (max-width: 768px) {
+  .el-carousel {
+    height: 250px;
+  }
+}
 .el-carousel__item h3 {
   color: #475669;
   opacity: 0.75;

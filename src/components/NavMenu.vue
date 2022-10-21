@@ -53,7 +53,7 @@ const isDark = useDark();
 const toggleDark = useToggle(isDark);
 </script>
 
-<style>
+<style scoped>
 .header-container {
   border-radius: 20px;
   width: 100%;
@@ -68,7 +68,11 @@ const toggleDark = useToggle(isDark);
   display: flex;
   align-items: center;
 }
-
+@media (max-width: 512px) {
+  .header-container .logo-container {
+    display: none;
+  }
+}
 .header-container .content {
   margin-right: 20px;
   display: flex;

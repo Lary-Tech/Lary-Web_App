@@ -16,7 +16,7 @@
           <el-input-number
             v-model="form.hpLowBound1.value"
             :min="10"
-            :max="100"
+            :max="70"
           ></el-input-number>
           <span>&nbsp;%</span>
           <el-radio-group v-model="form.hpLowBound1.press">
@@ -38,7 +38,7 @@
           <el-input-number
             v-model="form.mpLowBound.value"
             :min="10"
-            :max="100"
+            :max="70"
           ></el-input-number>
           <span>&nbsp;%</span>
           <el-radio-group v-model="form.mpLowBound.press">
@@ -54,7 +54,7 @@
           <el-input-number
             v-model="form.hpLowBound2.value"
             :min="10"
-            :max="100"
+            :max="70"
           ></el-input-number>
           <span>&nbsp;%</span>
           <el-radio-group v-model="form.hpLowBound2.press">
@@ -75,7 +75,7 @@
         <el-col :span="9">
           <el-radio-group v-model="form.magicScrollPress">
             <el-radio label="">無</el-radio>
-            <el-radio label="6">按6</el-radio>
+            <el-radio label="2">按2</el-radio>
           </el-radio-group>
         </el-col>
       </el-row>

@@ -4,7 +4,7 @@
       <span class="center hero"><slot name="hero"></slot></span>
     </div>
     <el-row>
-      <el-col :xs="24" :md="12">
+      <el-col :xs="24" :sm="12">
         <div class="wrap">
           <div class="hero2-section">
             <span class="center hero2">登入</span>
@@ -12,7 +12,7 @@
           <slot name="first"></slot>
         </div>
       </el-col>
-      <el-col :xs="24" :md="12">
+      <el-col :xs="24" :sm="12">
         <div class="wrap">
           <div class="hero2-section">
             <span class="center hero2">註冊</span>
@@ -27,7 +27,8 @@
 <style scoped>
 .container {
   display: block;
-  padding: 20px 60px 60px 60px;
+  padding-left: 4vw;
+  padding-right: 4vw;
 }
 .wrap {
   border-radius: 20px;
@@ -50,7 +51,7 @@
 
 .hero-section {
   display: flex;
-  margin-bottom: 40px;
+  margin-bottom: 2vh;
 }
 .hero2-section {
   display: flex;
