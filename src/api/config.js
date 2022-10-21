@@ -28,6 +28,7 @@ const __updateConfig = async (config) => {
     ElMessage({
       message: "儲存設定成功！",
       type: "success",
+      showClose: true,
     });
     return response.data;
   } catch (error) {
@@ -57,6 +58,7 @@ const __getConfig = async () => {
     ElMessage({
       message: "取得設定成功！",
       type: "success",
+      showClose: true,
     });
     console.log("get config success", response.data);
     return response.data;
@@ -105,6 +107,7 @@ export const testCors = async () => {
     ElMessage({
       message: "取得設定成功！",
       type: "success",
+      showClose: true,
     });
 
     return response.data;
