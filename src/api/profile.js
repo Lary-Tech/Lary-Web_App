@@ -23,6 +23,7 @@ const __getProfile = async () => {
     ElMessage({
       message: "取得個人資料成功！",
       type: "success",
+      showClose: true,
     });
     console.log("get profile success", response.data);
     return response.data;
@@ -54,6 +55,7 @@ const __updateProfile = async (profile) => {
     ElMessage({
       message: "儲存個人資料成功！",
       type: "success",
+      showClose: true,
     });
     console.log("update profile success", response.data);
     return response.data;
