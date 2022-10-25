@@ -2,14 +2,16 @@
   <ProfileLayout>
     <template #aside>
       <el-button @click="activeForm = 'profile'">個人資料</el-button>
-      <!-- <el-button @click="activeForm = 'auto'">自動模式設定</el-button> -->
+      <div style="height: 1px"></div>
+      <el-button @click="activeForm = 'auto'">自動模式設定</el-button>
+      <div style="height: 1px"></div>
       <el-button @click="activeForm = 'manual'">手動模式設定</el-button>
-      <div style="height: 20px"></div>
+      <div style="height: 1px"></div>
       <el-button @click="signOut">登出</el-button>
     </template>
     <template #main>
       <ProfileForm v-if="activeForm == 'profile'" />
-      <!-- <ConfigForm v-if="activeForm == 'auto'" /> -->
+      <AutoForm v-if="activeForm == 'auto'" />
       <ManualForm v-if="activeForm == 'manual'" />
     </template>
   </ProfileLayout>
@@ -19,7 +21,7 @@
 import ProfileLayout from "@/layouts/ProfileLayout.vue";
 import ProfileForm from "../components/ProfileForm.vue";
 import ManualForm from "../components/ManualForm.vue";
-// import AutoForm from "../components/AutoForm.vue";
+import AutoForm from "../components/AutoForm.vue";
 
 import { ref } from "vue";
 import { useRouter } from "vue-router";
@@ -36,3 +38,11 @@ const signOut = async () => {
 const activeForm = ref("profile");
 // testCors();
 </script>
+
+<style scoped>
+.el-button {
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+  width: 100%;
+}
+</style>
