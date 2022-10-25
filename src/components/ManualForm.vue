@@ -52,6 +52,44 @@
         <el-radio label="2">按2</el-radio>
       </el-radio-group>
     </el-form-item>
+    <el-form-item label="(5) 隊友狀態：">
+      <el-form-item label="P2：">
+        <el-input-number
+          v-model="form.team.p2.hpLowBound.value"
+          :min="10"
+          :max="70"
+        ></el-input-number>
+        <span>&nbsp;%</span>
+        <el-radio-group v-model="form.team.p2.hpLowBound.press">
+          <el-radio label="">無</el-radio>
+          <el-radio label="F2">按F2</el-radio>
+        </el-radio-group>
+      </el-form-item>
+      <el-form-item label="P3：">
+        <el-input-number
+          v-model="form.team.p3.hpLowBound.value"
+          :min="10"
+          :max="70"
+        ></el-input-number>
+        <span>&nbsp;%</span>
+        <el-radio-group v-model="form.team.p3.hpLowBound.press">
+          <el-radio label="">無</el-radio>
+          <el-radio label="F3">按F3</el-radio>
+        </el-radio-group>
+      </el-form-item>
+      <el-form-item label="P4：">
+        <el-input-number
+          v-model="form.team.p4.hpLowBound.value"
+          :min="10"
+          :max="70"
+        ></el-input-number>
+        <span>&nbsp;%</span>
+        <el-radio-group v-model="form.team.p4.hpLowBound.press">
+          <el-radio label="">無</el-radio>
+          <el-radio label="F4">按F4</el-radio>
+        </el-radio-group>
+      </el-form-item>
+    </el-form-item>
     <!-- <el-form-item label="藥水量低於">
       <el-row>
         <el-col :span="9">
@@ -140,6 +178,26 @@ const form = reactive({
     press: "6",
   },
   maps: [],
+  team: {
+    p2: {
+      hpLowBound: {
+        value: 50,
+        press: "F2",
+      },
+    },
+    p3: {
+      hpLowBound: {
+        value: 50,
+        press: "F3",
+      },
+    },
+    p4: {
+      hpLowBound: {
+        value: 50,
+        press: "F4",
+      },
+    },
+  },
 });
 
 const isfetchSuccess = ref(true);
@@ -153,12 +211,18 @@ onBeforeMount(() => {
       form[key] = config[key];
     });
     isfetchSuccess.value = true;
+
+    console.log("fetchConfig: ", form);
   };
 
   fetchConfig();
 });
 </script>
 <style scoped>
+.el-form-item {
+  margin-right: 2vw;
+  width: 100%;
+}
 .el-radio-group {
   margin-left: 2vw;
 }
