@@ -26,25 +26,3 @@ a {
 *, *::before, *::after {
   font-weight: bold;
 }
-
-::v-deep(.el-carousel) {
-  width: 100%;
-
-  .el-carousel__container {
-    height: auto;
-  }
-
-  img {
-    height: 100%;
-    display: block;
-    margin: auto;
-  }
-
-  .carouselImg {
-    opacity: 0;
-  }
-
-  .el-carousel__indicators--horizontal {
-    background: #00000030;
-  }
-}

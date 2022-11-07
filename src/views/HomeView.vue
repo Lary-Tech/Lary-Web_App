@@ -1,53 +1,67 @@
 <template>
   <el-carousel :interval="3000" type="card">
     <el-carousel-item>
-      <el-image
+      <img
         src="https://cf.shopee.tw/file/a3f44bacbc1aab28428152c788591e18"
+        alt="img"
         fit="cover"
       />
     </el-carousel-item>
     <el-carousel-item>
-      <el-image
+      <img
         src="https://cf.shopee.tw/file/42bfd3ef69698b9fd0f90fa1694b2546"
+        alt="img"
         fit="cover"
       />
     </el-carousel-item>
     <el-carousel-item>
-      <el-image
+      <img
         src="https://cf.shopee.tw/file/02962849bc78bee3d4a3dba5c0622d06"
+        alt="img"
         fit="cover"
       />
     </el-carousel-item>
-    <el-carousel-item
-      ><el-image
+    <el-carousel-item>
+      <img
         src="https://cf.shopee.tw/file/240bfadf6f60957740659ec8bf1ee6b2"
+        alt="img"
         fit="cover"
       />
     </el-carousel-item>
+    <img
+      src="https://cf.shopee.tw/file/240bfadf6f60957740659ec8bf1ee6b2"
+      class="carouselImg"
+    />
   </el-carousel>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .el-carousel {
-  height: 50vh;
-}
-@media screen and (max-width: 768px) {
-  .el-carousel {
-    height: 250px;
-  }
-}
-.el-carousel__item h3 {
-  color: #475669;
-  opacity: 0.75;
-  line-height: 200px;
-  margin: 0;
-  text-align: center;
-}
-.el-carousel__item:nth-child(2n) {
-  background-color: #99a9bf;
-}
+  width: 100%;
 
-.el-carousel__item:nth-child(2n + 1) {
-  background-color: #d3dce6;
+  :deep(.el-carousel__container) {
+    height: auto !important;
+  }
+
+  :deep(.el-carousel__item) {
+    left: -20px;
+  }
+
+  :deep(.el-carousel__item--card) {
+    width: 50%;
+    min-width: 350px;
+  }
+
+  img {
+    height: 50vh;
+    max-height: 580px;
+    width: 350px;
+    display: block;
+    margin: auto;
+  }
+
+  .carouselImg {
+    opacity: 0;
+  }
 }
 </style>
